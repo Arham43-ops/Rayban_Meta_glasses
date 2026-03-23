@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart | Ray-Ban Meta</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .cart-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            margin-bottom: 20px;
+        }
+        .cart-item img { width: 100px; height: 100px; object-fit: contain; }
+        .cart-total {
+            text-align: right;
+            padding: 40px;
+            border-top: 1px solid var(--glass-border);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="../index.html" class="brand">RAY-BAN | META</a>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="cart.html" id="cart-btn">
+                        🛒 <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main style="padding-top: 120px;">
+        <section class="container animate">
+            <div class="section-title">
+                <h1>Review Your Order</h1>
+            </div>
+            
+            <div id="cart-items-container">
+                <!-- Cart items rendered here by app.js -->
+            </div>
+
+            <div class="cart-total" id="cart-summary">
+                <div style="font-size: 1.5rem; margin-bottom: 20px;">
+                    Subtotal: <span id="cart-subtotal">₹0</span>
+                </div>
+                <div style="font-size: 2rem; font-weight: 700; margin-bottom: 30px;">
+                    Total: <span id="cart-total">₹0</span>
+                </div>
+                <button id="checkout-btn" class="btn btn-primary">Proceed to Checkout</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>

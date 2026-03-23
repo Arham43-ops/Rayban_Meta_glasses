@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | Ray-Ban Meta</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="../index.html" class="brand">RAY-BAN | META</a>
+            </nav>
+        </div>
+    </header>
+
+    <main style="display: flex; align-items: center; justify-content: center; height: 100vh; text-align: center;">
+        <div class="container animate">
+            <h1 style="font-size: 64px; margin-bottom: 20px;">Thank You!</h1>
+            <p style="color: var(--text-muted); font-size: 20px; margin-bottom: 40px;">Your Ray-Ban Meta smart glasses are on their way to you. <br>Order #RM-<span id="order-number"></span></p>
+            <script>
+                document.getElementById('order-number').textContent = Math.floor(Math.random() * 90000) + 10000;
+            </script>
+            <a href="../index.html" class="btn btn-primary">Back to Home</a>
+        </div>
+    </main>
+</body>
+</html>
