@@ -78,10 +78,14 @@
                 ? PRODUCTS 
                 : PRODUCTS.filter(p => p.category === category);
             
+            // Determine if we are in a subdirectory (like /pages/)
+            const isSubDir = window.location.pathname.includes('/pages/');
+            const basePath = isSubDir ? '../' : '';
+
             container.innerHTML = filtered.map(p => `
                 <div class="product-card animate" style="opacity: 1; transform: translateY(0);">
                     <div class="product-img-wrapper" style="position: relative; overflow: hidden; height: 300px; border-radius: 8px;">
-                        <img src="${p.image}" alt="${p.name}" class="product-img" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                        <img src="${basePath}${p.image}" alt="${p.name}" class="product-img" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                     </div>
                     <div class="product-info" style="padding: 20px 0;">
                         <span style="font-size: 12px; text-transform: uppercase; color: var(--accent); letter-spacing: 2px;">${p.category}</span>

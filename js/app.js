@@ -5,7 +5,7 @@ const PRODUCTS = [
         category: "Wayfarer",
         description: "The original classic, now with hands-free camera and AI.",
         price: 24999,
-        image: "../img/p1.png"
+        image: "img/p1.png"
     },
     {
         id: 2,
@@ -13,7 +13,7 @@ const PRODUCTS = [
         category: "Headliner",
         description: "Modern rounded style for the next generation of storytellers.",
         price: 27999,
-        image: "../img/p2.png"
+        image: "img/p2.png"
     },
     {
         id: 3,
@@ -21,7 +21,7 @@ const PRODUCTS = [
         category: "Skyler",
         description: "Elegantly refined silhouette with cat-eye inspiration.",
         price: 29999,
-        image: "../img/p3.png"
+        image: "img/p3.png"
     }
 ];
 
@@ -78,10 +78,14 @@ class EcommerceApp {
         const container = document.getElementById('products-container');
         if (!container) return;
 
+        // Determine if we are in a subdirectory (like /pages/)
+        const isSubDir = window.location.pathname.includes('/pages/');
+        const basePath = isSubDir ? '../' : '';
+
         container.innerHTML = PRODUCTS.map(p => `
             <div class="product-card animate">
                 <div class="product-img-wrapper" style="position: relative; overflow: hidden; height: 300px; border-radius: 8px;">
-                    <img src="${p.image}" alt="${p.name}" class="product-img" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                    <img src="${basePath}${p.image}" alt="${p.name}" class="product-img" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
                 <div class="product-info" style="padding: 20px 0;">
                     <span style="font-size: 12px; text-transform: uppercase; color: var(--accent); letter-spacing: 2px;">${p.category}</span>
