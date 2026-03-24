@@ -7,25 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <nav>
-                <a href="index.html" class="brand">RAY-BAN | META</a>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="pages/shop.html">Shop</a></li>
-                    <li><a href="pages/about.html">About</a></li>
-                    <li><a href="pages/contact.html">Contact</a></li>
-                </ul>
-                <div class="nav-actions">
-                    <a href="pages/cart.html" id="cart-btn">
-                        🛒 <span class="cart-count">0</span>
-                    </a>
-                    <a href="pages/shop.html" class="btn btn-primary">Shop Now</a>
-                </div>
-            </nav>
-        </div>
-    </header>
+    <header></header>
 
     <main>
         <section class="hero">
@@ -39,88 +21,51 @@
                     </div>
                 </div>
             </div>
-            <div class="hero-visual"></div>
-        </section>
-
-        <section id="featured" class="container" style="padding: 100px 0;">
-            <div class="section-title animate">
-                <h2>Iconic Style. <br>Infinite Intelligence.</h2>
-                <p style="color: var(--text-muted); max-width: 600px; margin: 20px auto;">Choose from the timeless Wayfarer, the modern Headliner, or the refined Skyler. All powered by Meta AI.</p>
-            </div>
-            <div id="products-container" class="products-grid">
-                <!-- Products dynamically loaded from app.js -->
+            <div class="hero-image-container animate">
+                <img src="img/hero_new.png" alt="Ray-Ban Meta Smart Glasses" class="hero-image">
             </div>
         </section>
 
-        <section class="experience" style="background: #000; padding: 150px 0; position: relative;">
+        <section id="featured" style="padding: 100px 0;">
+            <div class="container">
+                <div class="section-title animate">
+                    <h2>Iconic Style. <br>Infinite Intelligence.</h2>
+                    <p style="color: var(--text-muted); max-width: 600px; margin: 20px auto;">Choose from the timeless Wayfarer, the modern Headliner, or the refined Skyler. All powered by Meta AI.</p>
+                </div>
+                <div id="product-list" class="product-grid">
+                    <!-- Products dynamically loaded from app.js -->
+                </div>
+            </div>
+        </section>
+
+        <section class="experience glass" style="margin: 100px 40px; padding: 100px; border-radius: 40px;">
             <div class="container" style="display: flex; align-items: center; gap: 80px;">
                 <div style="flex: 1;">
-                    <img src="img/wayfarer.png" alt="Wayfarer Detail" style="width: 100%; filter: drop-shadow(0 0 30px var(--accent-glow));">
+                    <img src="img/wayfarer_smart_glasses.png" alt="Wayfarer Detail" style="width: 100%; filter: drop-shadow(0 0 30px var(--primary-glow));">
                 </div>
                 <div style="flex: 1;" class="animate">
-                    <h2 style="font-size: 40px; margin-bottom: 24px;">Hands-free everything.</h2>
-                    <p style="color: var(--text-muted); margin-bottom: 32px;">Ask Meta AI to get information, translate signs, or just keep you updated while you stay in the moment. Integrated speakers and microphones deliver premium audio without blocking the world.</p>
-                    <ul style="list-style: none; color: var(--text-main);">
-                        <li style="margin-bottom: 16px;">✨ 12MP Ultra-wide camera</li>
-                        <li style="margin-bottom: 16px;">🎙️ 5-Mic array for immersive sound</li>
-                        <li style="margin-bottom: 16px;">🤖 Voice-controlled Meta AI</li>
-                        <li style="margin-bottom: 16px;">🔋 4 Hours of battery + 32 hours via case</li>
+                    <h2 style="font-size: 48px; margin-bottom: 24px; line-height: 1.1;">Hands-free <br>everything.</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 32px; font-size: 18px;">Ask Meta AI to get information, translate signs, or just keep you updated while you stay in the moment. Integrated speakers and microphones deliver premium audio without blocking the world.</p>
+                    <ul style="list-style: none; color: var(--text-main); font-weight: 500;">
+                        <li style="margin-bottom: 20px; display: flex; align-items: center; gap: 12px;">
+                            <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--primary);"></div>
+                            12MP Ultra-wide camera for first-person capture
+                        </li>
+                        <li style="margin-bottom: 20px; display: flex; align-items: center; gap: 12px;">
+                            <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--primary);"></div>
+                            5-Mic array for immersive spatial audio
+                        </li>
+                        <li style="margin-bottom: 20px; display: flex; align-items: center; gap: 12px;">
+                            <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--primary);"></div>
+                            Voice-controlled Meta AI with visual reasoning
+                        </li>
                     </ul>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <div class="brand" style="margin-bottom: 20px;">RAY-BAN | META</div>
-                    <p style="color: var(--text-muted);">Innovating the way we see and share the world.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Products</h4>
-                    <a href="pages/shop.html">Wayfarer</a>
-                    <a href="pages/shop.html">Headliner</a>
-                    <a href="pages/shop.html">Skyler</a>
-                </div>
-                <div class="footer-col">
-                    <h4>Support</h4>
-                    <a href="pages/contact.html">Contact Us</a>
-                    <a href="pages/about.html">About Us</a>
-                    <a href="#">Shipping</a>
-                </div>
-                <div class="footer-col">
-                    <h4>Social</h4>
-                    <a href="#">Instagram</a>
-                    <a href="#">Twitter</a>
-                    <a href="#">Facebook</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                &copy; 2026 Ray-Ban Meta Shop. All Rights Reserved.
-            </div>
-        </div>
-    </footer>
-
+    <footer></footer>
     <script src="js/app.js"></script>
-    <script>
-        // Trigger animations on scroll
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.animate').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'all 0.8s ease-out';
-            observer.observe(el);
-        });
-    </script>
 </body>
 </html>

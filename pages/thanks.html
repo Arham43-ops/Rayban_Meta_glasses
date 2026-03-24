@@ -6,24 +6,26 @@
     <title>Thank You | Ray-Ban Meta</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
-    <header>
-        <div class="container">
-            <nav>
-                <a href="../index.html" class="brand">RAY-BAN | META</a>
-            </nav>
-        </div>
-    </header>
-
-    <main style="display: flex; align-items: center; justify-content: center; height: 100vh; text-align: center;">
-        <div class="container animate">
-            <h1 style="font-size: 64px; margin-bottom: 20px;">Thank You!</h1>
-            <p style="color: var(--text-muted); font-size: 20px; margin-bottom: 40px;">Your Ray-Ban Meta smart glasses are on their way to you. <br>Order #RM-<span id="order-number"></span></p>
+<body style="height: 100vh; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at top right, #1a1a1a, #000);">
+    
+    <main class="container animate" style="max-width: 600px;">
+        <div class="glass-morphism" style="padding: 60px; border-radius: var(--radius-lg); text-align: center;">
+            <div style="font-size: 5rem; margin-bottom: 30px;">✓</div>
+            <h1 style="font-size: 3rem; margin-bottom: 16px;">Thank You</h1>
+            <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 40px; line-height: 1.6;">
+                Your order has been placed successfully. Get ready to experience the next generation of smart eyewear.
+                <br><br>
+                Order ID: <span id="order-id" style="color: var(--primary); font-family: monospace; font-weight: 700;">#RB-742910</span>
+            </p>
             <script>
-                document.getElementById('order-number').textContent = Math.floor(Math.random() * 90000) + 10000;
+                document.getElementById('order-id').textContent = '#RB-' + Math.floor(100000 + Math.random() * 900000);
             </script>
-            <a href="../index.html" class="btn btn-primary">Back to Home</a>
+            <div style="display: flex; gap: 16px; justify-content: center;">
+                <a href="../index.html" class="btn btn-primary" style="flex: 1;">Back to Home</a>
+            </div>
         </div>
     </main>
+
+    <script src="../js/app.js"></script>
 </body>
 </html>

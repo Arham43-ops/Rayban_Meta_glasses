@@ -3,80 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wishlist | Ray-Ban Meta</title>
+    <title>Your Wishlist | Ray-Ban Meta</title>
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        .wishlist-container { padding: 10rem 5%; max-width: 1000px; margin: 0 auto; min-height: 80vh; }
-        .empty-wishlist { text-align: center; padding: 5rem; color: var(--secondary); }
-    </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">RAY-BAN | META</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="about.html">Our Story</a></li>
-                <li><a href="contact.html">Support</a></li>
-            </ul>
-        </nav>
-    </header>
+    <header></header>
 
-    <div class="wishlist-container">
-        <h1 style="margin-bottom: 3rem;">YOUR WISHLIST</h1>
-        <div id="wishlist-grid" class="product-grid">
-            <!-- Wishlist cards will be injected by JavaScript -->
-        </div>
-        <div id="wishlist-empty" style="display: none;" class="empty-wishlist">
-            <h2>Your wishlist is empty.</h2><br>
-            <a href="shop.html" class="btn btn-primary">EXPLORE THE COLLECTION</a>
-        </div>
-    </div>
+    <main>
+        <section class="page-header glass-morphism" style="padding: 140px 0 60px; text-align: center;">
+            <div class="container animate">
+                <h1 style="font-size: clamp(2rem, 5vw, 4rem);">Saved Favorites</h1>
+                <p style="color: var(--text-muted); margin-top: 16px;">Your curated selection of future-ready eyewear.</p>
+            </div>
+        </section>
+
+        <section class="container animate" style="padding: 80px 0 100px;">
+            <div id="wishlist-items" class="product-grid">
+                <!-- Wishlist items rendered here by app.js -->
+            </div>
+
+            <div id="empty-wishlist" style="text-align: center; padding: 100px 0; display: none;">
+                <div style="font-size: 4rem; margin-bottom: 24px;">✨</div>
+                <h2 style="margin-bottom: 16px;">Your wishlist is empty.</h2>
+                <p style="color: var(--text-muted); margin-bottom: 40px;">Discovery awaits. Start adding your favorites.</p>
+                <a href="shop.html" class="btn btn-primary">Discover Collection</a>
+            </div>
+        </section>
+    </main>
+
+    <footer></footer>
 
     <script src="../js/app.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            renderWishlist();
-        });
 
-        function renderWishlist() {
-            const grid = document.getElementById('wishlist-grid');
-            const empty = document.getElementById('wishlist-empty');
-            const wishlistIds = JSON.parse(localStorage.getItem('wishlist')) || [];
-            
-            if (wishlistIds.length === 0) {
-                grid.innerHTML = '';
-                empty.style.display = 'block';
-                return;
-            }
-
-            empty.style.display = 'none';
-            const wishlistProducts = products.filter(p => wishlistIds.includes(p.id));
-
-            grid.innerHTML = wishlistProducts.map(product => `
-                <div class="product-card">
-                    <img src="${product.image}" alt="${product.name}" class="product-image">
-                    <div class="product-info">
-                        <h3>${product.name}</h3>
-                        <p>${product.description}</p>
-                        <div class="price">$${product.price}</div>
-                        <div class="card-actions">
-                            <button class="add-to-cart" onclick="addToCart(${product.id})">ADD TO CART</button>
-                            <i class="fas active fa-heart wishlist-toggle" onclick="removeFromWishlist(${product.id})"></i>
-                        </div>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        function removeFromWishlist(productId) {
-            let wishlistIds = JSON.parse(localStorage.getItem('wishlist')) || [];
-            wishlistIds = wishlistIds.filter(id => id !== productId);
-            localStorage.setItem('wishlist', JSON.stringify(wishlistIds));
-            renderWishlist();
-        }
-    </script>
 </body>
 </html>
